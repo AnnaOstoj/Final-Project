@@ -43,6 +43,7 @@ def load():
         temp_post["body"] = entry.body
         temp_post["pub_date"] = entry.pub_date
         temp_post["is_published"] = entry.is_published
+        temp_post["id"] = entry.id
         posts_list.append(temp_post)
  
     return posts_list

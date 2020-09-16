@@ -5,5 +5,5 @@ from wtforms.validators import DataRequired, ValidationError
 class EntryForm(FlaskForm):
     title = StringField('Text', validators=[DataRequired()])
     body = TextAreaField('Body', validators=[DataRequired()])
-    is_published = BooleanField('Is_Published', validators=[DataRequired()], default="checked")
+    is_published = BooleanField('Is_Published', default="checked")
   
