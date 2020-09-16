@@ -2,25 +2,29 @@
 
 {% block content %}
 <h3>
-   Dodaj nowy wpis
+   Add new post
 </h3>
 
 <form action="" method="POST">
   {{entry_form.hidden_tag()}}
    <div class="form-group">
-       <label for="title">Tytuł wpisu</label>
+       <label for="title">Post title</label>
        {{ entry_form.title(class_="form-control") }}
        
    </div>
    <div class="form-group">
-       <label for="body">Treść</label>
+       <label for="body">Content</label>
        {{ entry_form.body(class_="form-control", cols="100", rows="10") }}
    </div>
    <div class="form-check">
        {{ entry_form.is_published(class_="form-check-input") }}
-       <label class="form-check-label" for="is_published">Wpis opublikowany</label>
+       <label class="form-check-label" for="is_published">Publish</label>
    </div>
-   <button type="submit" class="btn btn-primary mt-5">Zapisz</button>
+   <button type="submit" value="Save" name="btn" class="btn btn-primary mt-5">Save</button>
+
+    <form method ="POST" action = "{{ url_for('index') }}">
+        <button type="submit" value="Cancel" name="btn" class="btn btn-primary mt-5" >Cancel</button>
+    </form>
 </form>
 
 {% endblock %}

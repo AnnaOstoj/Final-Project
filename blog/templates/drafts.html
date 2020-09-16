@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2 class="text-center">Drafts</h2>
+    <form method ="POST" action = "{{ url_for('index') }}">
+        <button type="submit" value="Cancel" name="btn" class="btn btn-primary mt-5" >Back</button>
+    </form>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <th>Date</th>
+            <th>Title</th>
+            <th>Content</th>
+            <th></th>
+        </thead>
+    {% for post in all_posts %}
+        <tr>
+            <td>{{ post.pub_date.strftime('%Y-%m-%d') }}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.body|truncate(100) }}</td>
+            <form method="POST" action="{{ url_for('remove_post', post_id=post.id) }}">
+                <td><input type="submit" value="Delete" name="btn" class="btn btn-primary" ></td>
+            </form>
+            
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+</body>
+{% endblock %}
