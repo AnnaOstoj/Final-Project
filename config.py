@@ -13,5 +13,3 @@ class Config:
         ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
         ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "admin")
 
-        redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
-        redis = redis.from_url(redis_url)
