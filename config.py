@@ -4,7 +4,7 @@ import redis
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
-        SECRET_KEY = os.urandom(24)
+        SECRET_KEY = "12390812903183242"
         SQLALCHEMY_DATABASE_URI = (
                 os.environ.get('DATABASE_URL') or
                 'sqlite:///' + os.path.join(BASE_DIR, 'blogs.db')
