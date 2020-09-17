@@ -1,4 +1,5 @@
 import os
+import redis
 
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -11,3 +12,6 @@ class Config:
         SQLALCHEMY_TRACK_MODIFICATIONS = False
         ADMIN_USERNAME = os.environ.get("ADMIN_USERNAME", "admin")
         ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "admin")
+
+        redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
+        redis = redis.from_url(redis_url)

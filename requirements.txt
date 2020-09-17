@@ -41,3 +41,4 @@ WTForms==2.3.1
 wtforms-validators==1.0.0
 gunicorn
 flask_migrate
+redis==2.4.13
